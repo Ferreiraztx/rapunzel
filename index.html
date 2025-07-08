@@ -6,18 +6,11 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<audio autoplay loop muted id="musica">
+<button onclick="document.getElementById('musica').play()">Tocar música</button>
+
+<audio id="musica" loop>
   <source src="music.mp3" type="audio/mpeg">
 </audio>
-
-<script>
-  // Desmuta e inicia após 1 segundo
-  setTimeout(() => {
-    const audio = document.getElementById('musica');
-    audio.muted = false;
-    audio.play();
-  }, 1000);
-</script>
 
   <div class="overlay"></div>
 
