@@ -148,7 +148,7 @@ h1 {
 
 .lanterna-img {
   position: absolute;
-  width: 60px;
+  width: 120px;
   animation: subirLanterna 12s linear infinite;
   opacity: 0.85;
 }
