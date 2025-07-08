@@ -4,12 +4,10 @@ body {
   background-image: url('wallpaper.jpg');
   background-size: cover;
   background-position: center;
-  color: white;
   font-family: 'Georgia', serif;
   text-align: center;
   overflow-x: hidden;
   min-height: 100vh;
-  position: relative;
 }
 
 /* Camada escura no fundo */
