@@ -6,11 +6,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<button onclick="document.getElementById('musica').play()">Tocar música</button>
 
-<audio id="musica" loop>
-  <source src="music.mp3" type="audio/mpeg">
-</audio>
 
   <div class="overlay"></div>
 
@@ -24,6 +20,11 @@
   <div class="container fade-in">
     <h1 class="glow">“Mesmo nos dias escuros,<br> você é a luz mais forte que eu conheço.”</h1>
     <button onclick="location.href='mensagem.html'" class="magic-button float">Ver a mensagem</button>
+    <button onclick="document.getElementById('musica').play()">Tocar música</button>
+
+<audio id="musica" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
   </div>
 </body>
 </html>
