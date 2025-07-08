@@ -1,22 +1,39 @@
 body {
   margin: 0;
   padding: 0;
-  background-image: url('wallpaper.jpg');
+  background-image: url('background.jpg');
   background-size: cover;
   background-position: center;
-  color: #fff;
+  color: white;
   font-family: 'Georgia', serif;
   text-align: center;
+  overflow-x: hidden;
   min-height: 100vh;
-  overflow: hidden;
+  position: relative;
 }
 
+/* Camada escura no fundo */
+.overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+/* Conteúdo principal */
 .container {
+  position: relative;
+  z-index: 2;
   padding: 30px;
-  background-color: rgba(0, 0, 0, 0.5);
-  margin: 5vh ;
+  background: rgba(255, 255, 255, 0.08);
   border-radius: 20px;
   max-width: 700px;
+  margin: 12vh auto;
+  box-shadow: 0 0 30px rgba(255,255,255,0.2);
+  backdrop-filter: blur(6px);
+  transition: opacity 0.5s ease;
 }
 
 h1, h2 {
@@ -25,97 +42,12 @@ h1, h2 {
 }
 
 p {
-  font-size: 1.0em;
+  font-size: 1.2em;
   margin-bottom: 15px;
   line-height: 1.6;
 }
 
-button, a {
-  background-color: #f7d774;
-  border: none;
-  padding: 12px 24px;
-  font-size: 18px;
-  border-radius: 10px;
-  color: #5f4b8b;
-  cursor: pointer;
-  text-decoration: none;
-  transition: transform 0.3s ease, background-color 0.3s;
-}
-
-button:hover, a:hover {
-  background-color: #fff3b0;
-  transform: scale(1.05);
-}
-
-/* Animações */
-.fade-in {
-  animation: fadeIn 2s ease forwards;
-  opacity: 0;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-}
-
-.float {
-  animation: float 3s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-8px);
-  }
-}
-
-.glow {
-  text-shadow: 0 0 15px #fffacd, 0 0 25px #ffe;
-}
-
-/* Fundo com sobreposição */
-.overlay {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100vw; height: 100vh;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 1;
-}
-
-/* Container principal acima do fundo */
-.container {
-  position: relative;
-  z-index: 2;
-  padding: 30px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 20px;
-  max-width: 700px;
-  margin: 5vh auto;
-  color: white;
-  box-shadow: 0 0 30px rgba(255,255,255,0.2);
-}
-
-/* Texto principal */
-h1 {
-  font-size: 2em;
-  line-height: 1.5;
-  margin-bottom: 30px;
-}
-
-.glow {
-  text-shadow: 0 0 15px #fff8dc, 0 0 25px #fdd;
-  animation: glowAnim 3s ease-in-out infinite alternate;
-}
-
-@keyframes glowAnim {
-  from { text-shadow: 0 0 10px #fff7c2; }
-  to { text-shadow: 0 0 25px #ffefaa, 0 0 50px #fff; }
-}
-
-/* Botão mágico */
+/* Botão encantado */
 .magic-button {
   background: linear-gradient(45deg, #f9e79f, #f7dc6f, #fad7a0);
   color: #5f4b8b;
@@ -134,8 +66,27 @@ h1 {
   box-shadow: 0 0 35px #fcefa1;
 }
 
-/* Lanternas animadas */
-/* Novo sistema de lanternas flutuantes com imagem */
+/* Efeitos de brilho e animação */
+.glow {
+  text-shadow: 0 0 15px #fff8dc, 0 0 25px #ffe;
+  animation: glowAnim 3s ease-in-out infinite alternate;
+}
+
+@keyframes glowAnim {
+  from { text-shadow: 0 0 10px #fff7c2; }
+  to { text-shadow: 0 0 25px #ffefaa, 0 0 50px #fff; }
+}
+
+.float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* Lanternas flutuando */
 .lanterns {
   position: fixed;
   top: 0; left: 0;
@@ -153,7 +104,6 @@ h1 {
   opacity: 0.85;
 }
 
-/* Posicionamentos variados */
 .lanterna1 { left: 20%; animation-delay: 0s; }
 .lanterna2 { left: 50%; animation-delay: 3s; width: 50px; }
 .lanterna3 { left: 80%; animation-delay: 5s; width: 40px; }
@@ -178,3 +128,7 @@ h1 {
   }
 }
 
+/* Esconde telas */
+.hidden {
+  display: none;
+}
